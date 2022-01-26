@@ -1,0 +1,76 @@
+-- 1
+SELECT ProductID, Name, Color, ListPrice
+FROM Production.Product;
+
+-- 2
+SELECT ProductID, Name, Color, ListPrice 
+FROM Production.Product
+WHERE ListPrice != 0;
+
+-- 3
+SELECT ProductID, Name, Color, ListPrice 
+FROM Production.Product
+WHERE Color Is Null;
+
+-- 4
+SELECT ProductID, Name, Color, ListPrice 
+FROM Production.Product
+WHERE Color Is Not NULL;
+
+-- 5
+SELECT ProductID, Name, Color, ListPrice 
+FROM Production.Product
+WHERE Color Is Not NULL And ListPrice > 0;
+
+-- 6
+SELECT Concat(Name,' ', Color)
+FROM Production.Product
+WHERE Color Is Not Null
+
+-- 7
+SELECT Concat('NAME:',Name, ' -- COLOR:',Color) 
+FROM Production.Product
+WHERE Color In ('Black', 'Silver');
+
+-- 8
+SELECT ProductID, Name
+FROM Production.Product
+WHERE ProductID Between 400 And 500;
+
+-- 9
+SELECT ProductID, Name, Color
+FROM Production.Product
+WHERE Color In ('Black', 'Blue');
+
+-- 10
+SELECT * 
+FROM Production.Product
+WHERE Name Like 'S%';
+
+-- 11
+SELECT Name, ListPrice
+FROM Production.Product
+WHERE Name Like 'S%'
+ORDER BY Name Asc;
+
+-- 12
+SELECT Name, ListPrice
+FROM Production.Product
+WHERE Name Like '[AS]%'
+ORDER BY Name Asc;
+
+-- 13
+SELECT *
+FROM Production.Product
+WHERE Name Like 'SPO[^K]%'
+ORDER BY Name Asc;
+
+-- 14
+SELECT Distinct Color
+FROM Production.Product
+ORDER BY Color Desc;
+
+-- 15
+SELECT Distinct ProductSubcategoryID,Color
+FROM Production.Product
+WHERE Color Is Not Null And ProductSubcategoryID Is Not Null
