@@ -25,7 +25,7 @@ WHERE Color Is Not NULL And ListPrice > 0;
 -- 6
 SELECT Concat(Name,' ', Color)
 FROM Production.Product
-WHERE Color Is Not Null
+WHERE Color Is Not Null;
 
 -- 7
 SELECT Concat('NAME:',Name, ' -- COLOR:',Color) 
@@ -73,4 +73,4 @@ ORDER BY Color Desc;
 -- 15
 SELECT Distinct ProductSubcategoryID,Color
 FROM Production.Product
-WHERE Color Is Not Null And ProductSubcategoryID Is Not Null
+WHERE Color Is Not Null And ProductSubcategoryID Is Not Null;
